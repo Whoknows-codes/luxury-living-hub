@@ -131,7 +131,7 @@ export function PropertyCard({ property, showBack }: Props) {
           asChild
           className="mt-5 h-12 w-full rounded-xl bg-primary text-[15px] font-semibold text-primary-foreground hover:bg-primary/90"
         >
-          <Link to="/property/$propertyId" params={{ propertyId: property.id }}>
+          <Link to={`/property/${property.id}`}>
             Contact agent
           </Link>
         </Button>
