@@ -1,27 +1,52 @@
-import * as React from "react";
-import { create } from "zustand";
+import { useSyncExternalStore } from "react";
 
-interface FavoritesState {
-  ids: Set<string>;
-  toggle: (id: string) => void;
-  has: (id: string) => boolean;
+const listeners = new Set<() => void>();
+let favorites: Set<string> = new Set();
+
+if (typeof window !== "undefined") {
+  try {
+    const raw = window.localStorage.getItem("housing:favorites");
+    if (raw) favorites = new Set(JSON.parse(raw));
+  } catch {}
 }
 
-export const useFavorites = create<FavoritesState>((set, get) => ({
-  ids: new Set<string>(),
-  toggle: (id) =>
-    set((s) => {
-      const next = new Set(s.ids);
-      if (next.has(id)) next.delete(id);
-      else next.add(id);
-      return { ids: next };
-    }),
-  has: (id) => get().ids.has(id),
-}));
+function emit() {
+  if (typeof window !== "undefined") {
+    try {
+      window.localStorage.setItem(
+        "housing:favorites",
+        JSON.stringify([...favorites]),
+      );
+    } catch {}
+  }
+  listeners.forEach((l) => l());
+}
+
+function subscribe(cb: () => void) {
+  listeners.add(cb);
+  return () => listeners.delete(cb);
+}
+
+export function toggleFavorite(id: string) {
+  const next = new Set(favorites);
+  if (next.has(id)) next.delete(id);
+  else next.add(id);
+  favorites = next;
+  emit();
+}
 
 export function useIsFavorite(id: string) {
-  return useFavorites((s) => s.ids.has(id));
+  return useSyncExternalStore(
+    subscribe,
+    () => favorites.has(id),
+    () => false,
+  );
 }
 
-// avoid unused import warning if tree-shaken
-void React;
+export function useFavoriteIds() {
+  return useSyncExternalStore(
+    subscribe,
+    () => favorites,
+    () => favorites,
+  );
+}
