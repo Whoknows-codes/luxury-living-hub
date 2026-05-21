@@ -1,10 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Bell, ChevronRight, CreditCard, HelpCircle, LogOut, Settings } from "lucide-react";
-
-export const Route = createFileRoute("/profile")({
-  head: () => ({ meta: [{ title: "Profile — Housing" }] }),
-  component: ProfilePage,
-});
 
 const items = [
   { icon: Bell, label: "Notifications" },
@@ -13,7 +7,7 @@ const items = [
   { icon: HelpCircle, label: "Help center" },
 ];
 
-function ProfilePage() {
+export default function Profile() {
   return (
     <div className="px-4 pt-6" style={{ paddingTop: "calc(env(safe-area-inset-top) + 1.5rem)" }}>
       <h1 className="font-display text-3xl tracking-tight">Profile</h1>

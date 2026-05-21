@@ -1,15 +1,10 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { Heart } from "lucide-react";
 import { useFavoriteIds } from "@/lib/favorites";
 import { properties } from "@/lib/properties";
 import { PropertyCard } from "@/components/property-card";
 
-export const Route = createFileRoute("/saved")({
-  head: () => ({ meta: [{ title: "Saved homes — Housing" }] }),
-  component: SavedPage,
-});
-
-function SavedPage() {
+export default function Saved() {
   const ids = useFavoriteIds();
   const saved = properties.filter((p) => ids.has(p.id));
 

@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { ChevronLeft, Share2, Heart, ChevronRight } from "lucide-react";
 import { useIsFavorite, toggleFavorite } from "@/lib/favorites";
 import { formatPrice, type Property } from "@/lib/properties";

@@ -1,6 +1,6 @@
 import type { Property } from "@/lib/properties";
 import { formatPrice } from "@/lib/properties";
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { useMemo, useState } from "react";
 
 interface Props {

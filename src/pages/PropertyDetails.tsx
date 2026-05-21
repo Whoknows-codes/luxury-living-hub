@@ -1,4 +1,4 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { Link, useParams } from "react-router-dom";
 import { ChevronLeft, Share2, Heart, Phone, Mail, BedDouble, Bath, Ruler, Trees } from "lucide-react";
 import { properties, formatPrice } from "@/lib/properties";
 import { useIsFavorite, toggleFavorite } from "@/lib/favorites";
@@ -6,43 +6,25 @@ import { MortgageCalculator } from "@/components/mortgage-calculator";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-export const Route = createFileRoute("/property/$propertyId")({
-  loader: ({ params }) => {
-    const property = properties.find((p) => p.id === params.propertyId);
-    if (!property) throw notFound();
-    return { property };
-  },
-  head: ({ loaderData }) => ({
-    meta: loaderData
-      ? [
-          {
-            title: `${loaderData.property.address}, ${loaderData.property.city} — Housing`,
-          },
-          {
-            name: "description",
-            content: loaderData.property.description.slice(0, 155),
-          },
-          {
-            property: "og:image",
-            content: loaderData.property.images[0],
-          },
-        ]
-      : [],
-  }),
-  notFoundComponent: () => (
-    <div className="p-8 text-center">
-      <p className="font-medium">Listing not found</p>
-      <Link to="/" className="mt-3 inline-block text-sm text-muted-foreground underline">
-        Back to listings
-      </Link>
-    </div>
-  ),
-  component: PropertyPage,
-});
+export default function PropertyDetails() {
+  // Grab the dynamic ID from the URL (e.g., /property/123)
+  const { propertyId } = useParams();
+  
+  // Find the matching property in your mock data
+  const property = properties.find((p) => p.id === propertyId);
+  const fav = useIsFavorite(property?.id || "");
 
-function PropertyPage() {
-  const { property } = Route.useLoaderData();
-  const fav = useIsFavorite(property.id);
+  // If someone types a bad URL, show a clean not found state
+  if (!property) {
+    return (
+      <div className="p-8 text-center mt-20">
+        <p className="font-medium">Listing not found</p>
+        <Link to="/" className="mt-3 inline-block text-sm text-muted-foreground underline">
+          Back to listings
+        </Link>
+      </div>
+    );
+  }
 
   const stats = [
     { icon: BedDouble, label: `${property.beds} beds` },

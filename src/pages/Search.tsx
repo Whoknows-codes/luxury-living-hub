@@ -1,16 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { SearchHeader, defaultFilters, type Filters } from "@/components/search-header";
 import { PropertyCard } from "@/components/property-card";
 import { properties } from "@/lib/properties";
 
-export const Route = createFileRoute("/search")({
-  head: () => ({ meta: [{ title: "Search — Housing" }] }),
-  component: SearchPage,
-});
-
-function SearchPage() {
+export default function Search() {
   const [filters, setFilters] = useState<Filters>(defaultFilters);
+  
   const filtered = useMemo(() => {
     const q = filters.query.trim().toLowerCase();
     return properties.filter((p) => {

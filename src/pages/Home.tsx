@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { SearchHeader, defaultFilters, type Filters } from "@/components/search-header";
 import { PropertyCard } from "@/components/property-card";
@@ -7,20 +6,7 @@ import { properties } from "@/lib/properties";
 import { cn } from "@/lib/utils";
 import { LayoutGrid, Map as MapIcon } from "lucide-react";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Housing — Find your next home" },
-      {
-        name: "description",
-        content: "Premium real estate listings in a modern, mobile-first dark experience.",
-      },
-    ],
-  }),
-  component: HomePage,
-});
-
-function HomePage() {
+export default function Home() {
   const [filters, setFilters] = useState<Filters>(defaultFilters);
   const [view, setView] = useState<"list" | "map">("list");
 
