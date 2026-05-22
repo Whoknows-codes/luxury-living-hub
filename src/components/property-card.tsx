@@ -51,8 +51,7 @@ export function PropertyCard({ property, showBack }: Props) {
     <article className="mb-4 overflow-hidden rounded-3xl bg-card shadow-[0_8px_30px_-12px_rgba(0,0,0,0.6)]">
       <div className="relative aspect-[4/5] sm:aspect-[16/11]">
         <Link
-          to="/property/$propertyId"
-          params={{ propertyId: property.id }}
+          to={`/property/${property.id}`}
           className="block h-full w-full"
         >
           <ImageCarousel images={property.images} alt={property.address} />
@@ -132,7 +131,7 @@ export function PropertyCard({ property, showBack }: Props) {
           asChild
           className="mt-5 h-12 w-full rounded-xl bg-primary text-[15px] font-semibold text-primary-foreground hover:bg-primary/90"
         >
-          <Link to="/property/$propertyId" params={{ propertyId: property.id }}>
+          <Link to={`/property/${property.id}`}>
             Contact agent
           </Link>
         </Button>

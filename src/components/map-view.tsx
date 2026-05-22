@@ -80,8 +80,7 @@ export function MapView({ properties }: Props) {
 
       {activeProp && (
         <Link
-          to="/property/$propertyId"
-          params={{ propertyId: activeProp.id }}
+          to={`/property/${activeProp.id}`}
           className="absolute inset-x-3 bottom-3 z-30 flex gap-3 rounded-2xl border border-border bg-card/95 p-3 backdrop-blur-md"
         >
           <img
