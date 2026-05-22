@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { ChevronLeft, Share2, Heart, ChevronRight } from "lucide-react";
 import { useIsFavorite, toggleFavorite } from "@/lib/favorites";
 import { formatPrice, type Property } from "@/lib/properties";
-import { ImageCarousel } from "./image-carousel";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -54,7 +53,12 @@ export function PropertyCard({ property, showBack }: Props) {
           to={`/property/${property.id}`}
           className="block h-full w-full"
         >
-          <ImageCarousel images={property.images} alt={property.address} />
+          {/* FIX: Bypassed the carousel for a standard image tag so it works immediately */}
+          <img 
+            src={property.images[0]} 
+            alt={property.address} 
+            className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+          />
         </Link>
 
         {/* Top controls */}

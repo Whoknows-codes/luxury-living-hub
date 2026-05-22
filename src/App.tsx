@@ -10,11 +10,11 @@ import PropertyDetails from "./pages/PropertyDetails";
 function App() {
   return (
     <Router>
-      {/* This wrapper forces the app to stay phone-sized on big screens */}
-      <div className="mx-auto flex min-h-screen max-w-md flex-col bg-background shadow-2xl sm:border-x sm:border-border overflow-x-hidden">
+      <div className="flex min-h-screen w-full flex-col bg-background overflow-x-hidden">
         
-        {/* Main Content Area */}
-        <div className="pb-20 flex-1"> 
+        {/* I added the desktop wrapper right here! 
+            Now every page is automatically constrained and centered on big screens. */}
+        <div className="pb-24 flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4"> 
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/search" element={<Search />} />
