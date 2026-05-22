@@ -131,13 +131,18 @@ export function PropertyCard({ property, showBack }: Props) {
           {property.address}, {property.city}
         </p>
 
-        <Button
+       <Button
           asChild
           className="mt-5 h-12 w-full rounded-xl bg-primary text-[15px] font-semibold text-primary-foreground hover:bg-primary/90"
         >
-          <Link to={`/property/${property.id}`}>
+          {/* We swapped <Link> for an <a> tag and used the official Telegram URL format */}
+          <a 
+            href="https://t.me/jamesmilners" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
             Contact agent
-          </Link>
+          </a>
         </Button>
       </div>
     </article>
