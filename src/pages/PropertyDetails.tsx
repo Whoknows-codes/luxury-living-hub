@@ -82,7 +82,7 @@ export default function PropertyDetails() {
       {/* Gallery grid */}
       {property.images.length > 1 && (
         <div className="grid grid-cols-3 gap-1 px-1 pt-1">
-          {property.images.slice(1, 4).map((src: string, i: number) => (
+          {property.images.slice(1, 7).map((src: string, i: number) => (
             <div key={i} className="aspect-square overflow-hidden bg-muted">
               <img src={src} alt="" className="h-full w-full object-cover" />
             </div>
