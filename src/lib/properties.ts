@@ -85,10 +85,10 @@ export const properties: Property[] = [
     description:
       "A stunning Mediterranean estate set on a quiet cul-de-sac in Granada Hills. Towering palms, a sweeping driveway, and a grand entry welcome you into soaring ceilings, an open chef's kitchen, and a primary suite with views of the San Fernando Valley. Resort-style backyard with pool, spa, and outdoor kitchen.",
     agent: {
-      name: "Fiana S. Weiner",
-      brokerage: "Weiner & Co. Realty",
-      phone: "+1 (818) 555-0142",
-      avatar: "https://i.pravatar.cc/120?img=47",
+      name: "James Milners",
+      brokerage: "",
+      phone: "",
+      avatar: "https://i.pravatar.cc/120?img=12",
     },
   },
   {
@@ -112,8 +112,8 @@ export const properties: Property[] = [
       "Modern farmhouse on 1.4 acres overlooking the lake. Vaulted timber beams, floor-to-ceiling windows, and a wraparound porch built for sunsets.",
     agent: {
       name: "James Milners",
-      brokerage: "Northshore Premier",
-      phone: "+1 (262) 555-0188",
+      brokerage: "",
+      phone: "",
       avatar: "https://i.pravatar.cc/120?img=12",
     },
   },
@@ -138,9 +138,9 @@ export const properties: Property[] = [
       "A rare opportunity to own a true architectural modern in one of Buckhead's most walkable and sought after locations. Defined by clean lines, dramatic volume, and effortless flow, this residence offers a level of design, light, and livability rarely found at this price point crafted for both elevated entertaining and everyday comfort. Dramatic ceiling heights and abundant natural light define the main living spaces, anchored by a striking two story chef's kitchen with marble countertops, custom cabinetry, and an expansive island.",
     agent: {
       name: "James Milners",
-      brokerage: "Bay & Bridge Realty",
-      phone: "+1 (415) 555-0177",
-      avatar: "https://i.pravatar.cc/120?img=32",
+      brokerage: "",
+      phone: "",
+      avatar: "https://i.pravatar.cc/120?img=12",
     },
   },
   {
@@ -163,10 +163,10 @@ export const properties: Property[] = [
     description:
       "Mountain modern retreat minutes from the slopes. Heated driveway, ski room, and a great room anchored by a stone hearth.",
     agent: {
-      name: "Daniel Reyes",
-      brokerage: "Summit Range Properties",
-      phone: "+1 (435) 555-0119",
-      avatar: "https://i.pravatar.cc/120?img=15",
+      name: "James Milners",
+      brokerage: "",
+      phone: "",
+      avatar: "https://i.pravatar.cc/120?img=12",
     },
   },
   {
@@ -189,10 +189,10 @@ export const properties: Property[] = [
     description:
       "Welcome to 2715 Lake Street. It's the kind of Sea Cliff home that rarely comes to market. A timeless, detached residence filled with warmth, light, and charm that defines this coveted neighborhood. Built in 1919 and tucked along one of Sea Cliff's most beloved blocks, the home embodies the classic character and gracious scale the neighborhood is known for.&#8232;Designed for modern living while honoring its original style, the home offers an ideal floor plan with four bedrooms, a sunroom, beautifully remodeled bathrooms, and expansive living spaces that feel both elegant and inviting.",
     agent: {
-      name: "Sloane Becker",
-      brokerage: "Capitol Urban Living",
-      phone: "+1 (512) 555-0166",
-      avatar: "https://i.pravatar.cc/120?img=44",
+      name: "James Milners",
+      brokerage: "",
+      phone: "",
+      avatar: "https://i.pravatar.cc/120?img=12",
     },
   },
   {
@@ -215,10 +215,10 @@ export const properties: Property[] = [
     description:
       "Lowcountry charmer with double porches, heart pine floors, and a courtyard garden tucked off King Street.",
     agent: {
-      name: "Evelyn Carter",
-      brokerage: "Harbor & Oak Realty",
-      phone: "+1 (843) 555-0133",
-      avatar: "https://i.pravatar.cc/120?img=20",
+      name: "James Milners",
+      brokerage: "",
+      phone: "",
+      avatar: "https://i.pravatar.cc/120?img=12",
     },
   },
 
@@ -242,10 +242,10 @@ export const properties: Property[] = [
     description:
       "Lowcountry charmer with double porches, heart pine floors, and a courtyard garden tucked off King Street.",
     agent: {
-      name: "Evelyn Carter",
-      brokerage: "Harbor & Oak Realty",
-      phone: "+1 (843) 555-0133",
-      avatar: "https://i.pravatar.cc/120?img=20",
+      name: "James Milners",
+      brokerage: "",
+      phone: "",
+      avatar: "https://i.pravatar.cc/120?img=12",
     },
   },
 ];

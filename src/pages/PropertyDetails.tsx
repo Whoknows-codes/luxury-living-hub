@@ -144,25 +144,20 @@ export default function PropertyDetails() {
               </p>
             </div>
           </div>
-          <div className="mt-4 flex gap-2">
-            <Button
-              asChild
-              variant="outline"
-              className="flex-1 rounded-xl border-border bg-transparent"
-            >
-              <a href={`tel:${property.agent.phone}`}>
-                <Phone className="mr-2 h-4 w-4" /> Call
-              </a>
-            </Button>
-            <Button
-              asChild
-              className="flex-1 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90"
-            >
-              <a href={`mailto:hello@housing.app?subject=Inquiry about ${property.address}`}>
-                <Mail className="mr-2 h-4 w-4" /> Message
-              </a>
-            </Button>
-          </div>
+         <div className="mt-4 flex">
+  <Button
+    asChild
+    className="w-full rounded-xl bg-primary text-primary-foreground hover:bg-primary/90"
+  >
+    <a
+      href="https://t.me/jamesmilners"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Mail className="mr-2 h-4 w-4" /> Message
+    </a>
+  </Button>
+</div>
         </section>
       </div>
     </div>
