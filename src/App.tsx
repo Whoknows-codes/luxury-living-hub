@@ -6,6 +6,7 @@ import Search from "./pages/Search";
 import Saved from "./pages/Saved";
 import Profile from "./pages/Profile";
 import PropertyDetails from "./pages/PropertyDetails";
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         
         <BottomNav />
       </div>
+      <Analytics />
     </Router>
   );
 }
