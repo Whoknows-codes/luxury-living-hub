@@ -11,7 +11,7 @@ import { Analytics } from "@vercel/analytics/react"
 function App() {
   return (
     <Router>
-      <div className="flex min-h-screen hidden w-full flex-col bg-background overflow-x-hidden">
+      <div className="flex min-h-screen w-full flex-col bg-background overflow-x-hidden">
         
         {/* I added the desktop wrapper right here! 
             Now every page is automatically constrained and centered on big screens. */}
